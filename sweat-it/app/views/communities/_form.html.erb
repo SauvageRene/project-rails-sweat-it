@@ -1,8 +1,7 @@
-<div class="container">
 <div class="row">
  <div class="col-sm-5">
    <%= form_for @community do |f| %>
- <div class="form_group">
+ <div class="form-group">
     <%= label_tag :name %>
     <%= f.text_field :name, class: "form-control" %>
  </div>
@@ -12,12 +11,14 @@
     <%= f.text_field :url, class: "form-control" %>
 </div>
 
-<div class="form_group">
-    <%= label_tag :bio %>
-    <%= f.text_area :bio, class: "form-control" %>
-</div>
-</div>
-</div>
-</div>
-
-<% end %>
+    <div class="form_group">
+        <%= label_tag :bio %>
+        <%= f.text_area :bio, class: "form-control" %>
+    </div>
+    
+    <div class="mt-2">
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+    </div>
+    <% end %>
+    </div>
+  </div>
