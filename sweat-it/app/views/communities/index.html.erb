@@ -4,7 +4,7 @@
   </div>
   <% end %>
 
-<%= @communities.each do |community| %>
+<% @communities.each do |community| %>
   <div class="card">
     <h3><%= link_to community.name, community %></h3><br>
     <%= community.bio %><br>

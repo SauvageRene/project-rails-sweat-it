@@ -23,8 +23,8 @@
   <div class="row">
     <div class="col-8">
     <% @posts.each do |post| %>
-      <div class="card">
-      <h5><%= link_to post.title, community_post_path(post.community_id, post) %></h5> <!--passing in the community ID to avoid having to load from the DB.-->
+      <div class="card p-3">
+      <h5><strong><%= link_to post.title, community_post_path(post.community_id, post) %></strong></h5> <!--passing in the community ID to avoid having to load from the DB.-->
       <p><%= truncate post.body, length: 200 %></p>
       </div>
   <% end %>
@@ -33,8 +33,8 @@
     <p class="h5"> Newest Communities</p>
     <div class="card" style="width: 18rem;">
     <ul class="list-group">
-    <%= @communities.each do |community| %>
-        <li class="list-group-item"><%= link_to community.name, community_path(community) %></li>
+    <% @communities.each do |community| %>
+        <strong><li class="list-group-item"><%= link_to community.name, community_path(community) %></li></strong>
         <% end %>
 </ul>
 </div>
