@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :set_community, only: [:show]
     
     def index
-        @communities = Community.all
+        @posts = Post.all
     end
 
     def show
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
         @post.user_id = current_user.id
 
         if @post.save
-            redirect_to posts_path
+            redirect_to community_path(@post.community_id)
         else
             render :new
         end
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-        params.require(:post).permit(:name, :url, :bio)
+        params.require(:post).permit(:title, :body)
     end
 
 end

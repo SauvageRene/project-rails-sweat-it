@@ -1,0 +1,16 @@
+<%= form_for @post do |f| %>
+    <div class="form-group">
+       <%= label_tag :title %>
+       <%= f.text_field :title, class: "form-control" %>
+    </div>
+       <div class="form_group">
+           <%= label_tag :body %>
+           <%= f.text_area :body, class: "form-control" %>
+       </div>
+       
+       <div class="mt-2">
+       <%= f.submit "Submit", class: "btn btn-primary" %>
+       </div>
+       <% end %>
+       </div>
+     </div>
