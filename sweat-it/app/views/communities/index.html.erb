@@ -1,8 +1,13 @@
+<% if user_signed_in? %>
+ <div class= "float=right">
+  <%= link_to "Create new Community", new_community_path, class: "btn btn-outline-primary" %>
+  </div>
+  <% end %>
 
 <%= @communities.each do |community| %>
   <div class="card">
     <h3><%= link_to community.name, community %></h3><br>
     <%= community.bio %><br>
     <%= community.total_members %><br>
+    </div>
 <% end %>
-</div>
