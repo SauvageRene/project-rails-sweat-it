@@ -22,7 +22,12 @@
     </div>
   <div class="row">
     <div class="col-8">
-    Left Column(insert here)
+    <% @posts.each do |post| %>
+      <div class="card">
+      <h5><%= link_to post.title, community_post_path(post.community_id, post) %></h5> <!--passing in the community ID to avoid having to load from the DB.-->
+      <p><%= truncate post.body, length: 200 %></p>
+      </div>
+  <% end %>
   </div>
     <div class="col-4">
     <p class="h5"> Newest Communities</p>
