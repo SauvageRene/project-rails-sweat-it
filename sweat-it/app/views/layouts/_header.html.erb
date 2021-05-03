@@ -1,29 +1,28 @@
 <div class="container" >
-  <div class="row">
-    <div class="col-12 pt-3 pb-3 mb-5 border-bottom">
-    <div class="float-right">
-        <% if user_signed_in? %>
+<div class="row">
+  <div class="col-12 pt-3 pb-3">
+  <div class="float-right">
+      <% if user_signed_in? %>
+      <!-- Button Div's and links -->
+      <div class="dropdown">
+      <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+      <%= current_user.full_name %>
+      </a>
+      <!-- data toggle should not have bs with it -->
 
-        <!-- Button Div's and links -->
-
-
-        <div class="dropdown">
-        <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= current_user.full_name %>
-        </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <%= link_to "Profile", "", class: "dropdown-item" %>
-        <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-    </div>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <%= link_to "Profile", "", class: "dropdown-item" %>
+      <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
   </div>
-         
-        <% else %>
-        <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
-        <% end %>
-      </div>
-      <p class="h3"><%= link_to "Sweat It", root_path %></p>
+</div>
+        
+      <% else %>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+      <% end %>
     </div>
+    <p class="h3"><%= link_to "Sweat It", root_path %></p>
   </div>
+</div>
 </div>
