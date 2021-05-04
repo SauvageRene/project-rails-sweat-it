@@ -30,8 +30,7 @@ class PostsController < ApplicationController
         end
     end
 
-    private
-
+    private 
 
     def set_post
         @post = Post.includes(:comments).find(params[:id])
