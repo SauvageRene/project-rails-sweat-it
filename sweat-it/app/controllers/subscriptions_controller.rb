@@ -1,8 +1,7 @@
 class SubscriptionsController < ApplicationController
     
     def create
-        @subscription = Subscription.new(subscription_params)
-        @subscription.user_id = current_user.id
+        @subscription = current_user.subscription.build(subscription_params)
         @subscription.save
             redirect_to community_path(@subscription.community_id)
     end
