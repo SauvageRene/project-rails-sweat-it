@@ -2,3 +2,9 @@
 
 
 <%= simple_format @post.body %>
+
+<%= form_for @comment do |f| %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.text_area :message, placeholder:"Add a public comment...", class="form-control" %>
+    <%= f.submit "Comment", class: "btn btn-light mt-3" %>
+<% end %>

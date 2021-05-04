@@ -9,7 +9,7 @@ class CommunitiesController < ApplicationController
     def show
         @posts = @community.posts
         @subscriber_count = @community.subscribers.count
-        @is_subscribed = user_signed_in? ? Subscription.where(community_id: @community_id, user_id: current_user.id).any? : false
+        is_subscribed
         @subscription = Subscription.new
     end
 
@@ -26,6 +26,10 @@ class CommunitiesController < ApplicationController
         else
             render :new
         end
+    end
+
+    def is_subscribed
+        @is_subscribed = user_signed_in? ? Subscription.find_by(community_id: @community_id, user_id: current_user.id) : false
     end
 
     private
