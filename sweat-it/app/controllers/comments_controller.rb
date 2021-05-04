@@ -4,12 +4,17 @@ class CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
 
-
-        if comment.save
-            render "messages/create"
+        respond_to do |format|
+            format.js {
+        if @comment.save
+            @comments. Comment.where(post_id: @comment.post_id)
+            render "comments/create"
         else
 
-    end
+        end
+        }
+      end
+     end
 
     def comment_params
         params.require(:comment).permit(:message, :post_id)
