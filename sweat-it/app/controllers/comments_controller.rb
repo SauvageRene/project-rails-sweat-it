@@ -6,12 +6,9 @@ class CommentsController < ApplicationController
 
         respond_to do |format|
             format.js {
-        if @comment.save
+         @comment.save
             @comments. Comment.where(post_id: @comment.post_id)
             render "comments/create"
-        else
-
-        end
         }
       end
      end

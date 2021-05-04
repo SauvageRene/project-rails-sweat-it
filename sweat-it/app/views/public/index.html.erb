@@ -8,13 +8,13 @@
 </div>
     <div class="row">
       <div class="col-sm-3">
-      Trending 1
+      <%=@posts.all.last.title %>
       </div>
       <div class="col-sm-3">
-      Trending 2
+      
       </div>
       <div class="col-sm-3">
-      Trending 3
+      
       </div>
     </div>
     <% end %>
@@ -38,6 +38,7 @@
         <strong><li class="list-group-item"><%= link_to community.name, community_path(community) %></li></strong>
         <% end %>
 </ul>
+<%= link_to "View All", communities_path, class: "btn btn-outline-primary" %>
 </div>
     </div>
   </div>

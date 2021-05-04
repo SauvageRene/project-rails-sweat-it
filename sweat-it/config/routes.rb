@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resources :posts
   end
   resources :subscriptions
-  resources :comments, only: [:create]
+  resources :comments, only: [:create], default:{format:'js'}
   root to: "public#index"
 end
