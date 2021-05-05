@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
   resources :subscriptions
   resources :comments, only: [:create], default:{format:'js'}
+  
   root to: "public#index"
 end

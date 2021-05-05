@@ -1,5 +1,5 @@
 class SubscriptionsController < ApplicationController
-    
+    before_action :authenticate_user!
     def create
         @subscription = Subscription.new(subscription_params)
         @subscription.save

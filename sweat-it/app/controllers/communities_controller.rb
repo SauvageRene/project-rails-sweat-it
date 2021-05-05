@@ -29,7 +29,7 @@ class CommunitiesController < ApplicationController
     end
 
     def is_subscribed
-        @is_subscribed = user_signed_in? ? Subscription.where(community_id: @community_id, user_id: current_user.id).any? : false
+        @is_subscribed = user_signed_in? ? Subscription.where(community_id: @community.id, user_id: current_user.id).any? : false
     end
 
     private
