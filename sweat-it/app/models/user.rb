@@ -6,9 +6,8 @@ class User < ApplicationRecord
     has_many :communities, through: :subscriptions
     has_many :posts
     has_many :comments
-
-
    
+    validates_presence_of :email, :password
 
     def full_name
       "#{first_name} #{last_name}"
@@ -24,8 +23,8 @@ class User < ApplicationRecord
         user.first_name = auth.info.first_name
         user.last_name = auth.info.last_name
         user.password = Devise.friendly_token[0,20]
+
         # user.name = auth.info.name
-        
       end
     end
   
