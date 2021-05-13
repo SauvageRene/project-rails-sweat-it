@@ -19,7 +19,7 @@ class CommunitiesController < ApplicationController
 
     def create
         @community = Community.new(community_values)
-        @community.user_id = current_user.id 
+        @community._userid = current_user.id 
 
         #Conditional 
         if @community.save
