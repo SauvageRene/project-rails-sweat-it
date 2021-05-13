@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :comments, only: [:create], default:{format:'js'}
   
   root to: "public#index"
+  
 end

@@ -4,4 +4,6 @@ class Post < ApplicationRecord
     has_many :comments
 
     validates_presence_of :title, :body, :user_id, :community_id
+
+
 end
