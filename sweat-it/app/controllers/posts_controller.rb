@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
     def auth_subscriber
         unless Subscription.where(community_id: params[:community_id], user_id: current_user.id).any?
-            redirect_to root_path, flash: {danger: "You are not authorized to view this page"}
+            redirect_to root_path, flash[:alert] = "You are not authorized to view this page"
         end
     end
 

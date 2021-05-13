@@ -19,8 +19,9 @@ class CommunitiesController < ApplicationController
 
     def create
         @community = Community.new(community_values)
-        @community.user_id = current_user.id
+        @community.user_id = current_user.id 
 
+        #Conditional 
         if @community.save
             redirect_to communities_path
         else
@@ -36,11 +37,11 @@ class CommunitiesController < ApplicationController
 
 
     def set_community
-        @community = Community.find(params[:id])
+        @community = Community.find(params[:id]) 
     end
 
     def community_values
-        params.require(:community).permit(:name, :url, :bio)
+        params.require(:community).permit(:name, :url, :bio) #user-submittable-data
     end
 
 end

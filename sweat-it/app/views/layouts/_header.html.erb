@@ -11,7 +11,7 @@
       <!-- data toggle should not have bs with it -->
 
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <%= link_to "Profile", profile_path(current_user.full_name), class: "dropdown-item" %>
+      <%= link_to "Profile", profile_path(current_user.username), class: "dropdown-item" %>
       <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
   </div>
